@@ -1,7 +1,7 @@
-name:  # Environment name
+name: CAS-Grab  # Environment name
 
 dependencies:  # Packages should be installed through conda if possible
-  - python=  # Python version
+  - python=3.11  # Python version
   - pre-commit
   - ruff
 
