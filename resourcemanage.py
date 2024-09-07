@@ -29,8 +29,8 @@ class Resource_Manager:
     def change_item(self, id, body_dict):
         self.itemsapi.patch_item(id, body=body_dict)
 
-    sample_body = {
-        "title": "Item 1",
-        "body": "This is a test item made by the API",
-        "rating": 5,
-    }
+    def get_item(self, id):
+        return self.itemsapi.get_item(id).to_dict()
+
+    def get_items(self):
+        return self.itemsapi.read_items().to_dict()
