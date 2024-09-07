@@ -33,4 +33,4 @@ class Resource_Manager:
         return self.itemsapi.get_item(id).to_dict()
 
     def get_items(self):
-        return self.itemsapi.read_items().to_dict()
+        return self.itemsapi.read_items()
