@@ -38,6 +38,3 @@ def fill_in(id):
         "metadata": json.dumps(metadata),
     }
     rm.change_item(id, body)
-
-
-print(rm.itemsapi.read_items())
