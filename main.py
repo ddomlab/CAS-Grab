@@ -23,9 +23,15 @@ def get_compound(CAS):
 def fill_in(id):
     body = rm.get_item(id)
     compound = get_compound(body["title"])
-    CAS = body[
-        "title"
-    ]  # TODO I'd like a more reliable way to get CAS than relying on human input
+    CAS = body["title"]
+    # TODO I'd like a more reliable way to get CAS than relying on human input
+    if (
+        "Autofilled" in body["tags"]
+        or id <= 300
+        or body["category_title"] not in ["Polymer", "Chemical Compound"]
+    ):
+        return
+
     metadata = json.loads(body["metadata"])
     metadata["extra_fields"]["SMILES"]["value"] = compound.isomeric_smiles
     metadata["extra_fields"]["Full name"]["value"] = compound.iupac_name
@@ -33,8 +39,9 @@ def fill_in(id):
 
     body = {
         "title": compound.synonyms[0],
-        "body": "an api test",
+        "body": "",
         "rating": 5,
+        "tags": ["Autofilled"],
         "metadata": json.dumps(metadata),
     }
     rm.change_item(id, body)
