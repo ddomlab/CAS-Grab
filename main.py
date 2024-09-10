@@ -46,7 +46,14 @@ def autofill():
         metadata = json.loads(items[index].to_dict()["metadata"])
         CAS = metadata["extra_fields"]["CAS"]["value"]
         id = items[index].to_dict()["id"]
-        if CAS is not None and id >= 300:
+        type = items[index].to_dict()["category"]
+
+        # check if CAS is there. also a safety to prevent it going and messing up old resources TODO: limit to chem comps
+        if (
+            CAS is not None
+            and id >= 300
+            and (type == "Chemical compound" or type == "Polymer")
+        ):
             fill_in(id)
             index += 1
         else:
