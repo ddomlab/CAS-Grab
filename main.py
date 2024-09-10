@@ -48,11 +48,12 @@ def autofill():
         id = items[index].to_dict()["id"]
         type = items[index].to_dict()["category"]
 
-        # check if CAS is there. also a safety to prevent it going and messing up old resources TODO: limit to chem comps
+        # check if CAS is there. also a safety to prevent it going and messing up old resources
         if (
-            CAS is not None
-            and id >= 300
-            and (type == "Chemical compound" or type == "Polymer")
+            CAS == ""  # check if the compound has already been "filled in"
+            and id
+            >= 300  # so it doesn't go wild and mess with old stuff during testing
+            and (type == 2 or type == 3)  # limits to only polymers and componds
         ):
             fill_in(id)
             index += 1
