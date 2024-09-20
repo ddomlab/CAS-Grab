@@ -30,6 +30,7 @@ def fill_in(id):
     metadata["extra_fields"]["SMILES"]["value"] = compound.isomeric_smiles
     metadata["extra_fields"]["Full name"]["value"] = compound.iupac_name
     metadata["extra_fields"]["CAS"]["value"] = CAS
+
     # TODO add hazards
 
     body = {

@@ -35,6 +35,7 @@ class LabelGenerator:
                 room=room_checked,
                 loc=loc_checked,
                 date=item["_date"],
+                qr_json=json.dumps({"id": id}),
             )
         )
 
