@@ -1,5 +1,5 @@
 from blabel import LabelWriter
-from resourcemanage import Resource_Manager
+from cas_grab.resourcemanage import Resource_Manager
 import json
 
 

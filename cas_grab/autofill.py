@@ -1,5 +1,5 @@
 import pubchempy as pcp
-from resourcemanage import Resource_Manager
+from cas_grab.resourcemanage import Resource_Manager
 import json
 
 rm = Resource_Manager()
@@ -11,7 +11,6 @@ rm = Resource_Manager()
 # should return more consistent results
 def get_compound(CAS):
     compound_list = pcp.get_compounds(CAS, "name")
-    # TODO throw error if list size is greater than 1
     if len(compound_list) > 1:
         raise ValueError(
             "Multiple compounds with this name have been found, please input a more specific name or CAS number"
@@ -23,15 +22,14 @@ def get_compound(CAS):
 def fill_in(id):
     body = rm.get_item(id)
     compound = get_compound(body["title"])
-    CAS = body[
-        "title"
-    ]  # TODO I'd like a more reliable way to get CAS than relying on human input
+    CAS = body["title"]
     metadata = json.loads(body["metadata"])
     metadata["extra_fields"]["SMILES"]["value"] = compound.isomeric_smiles
     metadata["extra_fields"]["Full name"]["value"] = compound.iupac_name
     metadata["extra_fields"]["CAS"]["value"] = CAS
 
-    # TODO add hazards
+    # TODO add hazards : this is proving to be more difficult than expected, i'll deal with this later
+    # hazards are not readily accessible through pubchempy api, so i'll have to find another way to get them
 
     body = {
         "title": compound.synonyms[0],
@@ -61,6 +59,3 @@ def autofill():
             index += 1
         else:
             break
-
-
-autofill()

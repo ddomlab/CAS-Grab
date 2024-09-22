@@ -32,3 +32,11 @@ api_client.set_default_header(header_name="Authorization", header_value=key)
 
 def load_items_api():
     return elabapi_python.ItemsApi(api_client)
+
+
+def load_experiments_api():
+    return elabapi_python.ExperimentsApi(api_client)
+
+
+def load_api():
+    return api_client

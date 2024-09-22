@@ -1,6 +1,6 @@
-import input_process
+import frontend.input_process
 
-p = input_process.Processor()
+p = frontend.input_process.Processor()
 
 while True:
     p.from_human(input())
