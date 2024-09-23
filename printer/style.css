@@ -5,10 +5,12 @@
 }
 
 img {
-    height: 22mm;
+    height: 12mm;
     display: inline-block;
     vertical-align: middle;
     image-rendering: pixelated;
+    position: absolute;
+    bottom: 0px; right: 0px;
 }
 .label {
     font-family: 'Courier New', Courier, monospace;

@@ -1,4 +1,4 @@
-<img src="{{ label_tools.qr_code(qr_json) }}"/>
+<img src="{{ label_tools.datamatrix(qr_json, cellsize=4,with_border=True) }}"/>
 <span class='label'>
     <div class="name">{{ name }}</div> <br/>
     id: {{ id_num }} <br/>
