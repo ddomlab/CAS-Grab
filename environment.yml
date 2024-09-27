@@ -6,10 +6,10 @@ dependencies:  # Packages should be installed through conda if possible
   - ruff
   - pyyaml
   - urllib3
-  - blabel
   - requests
   - tkinter
   - pip 
   - pip:  # Install additional packages through pip if they're not available in the default conda channel
     - pubchempy
     - elabapi_python
+    - blabel
