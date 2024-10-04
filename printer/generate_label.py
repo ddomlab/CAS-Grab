@@ -10,6 +10,8 @@ class LabelGenerator:
         )  # TODO: platform agnostic paths
         self.records = []
         self.rm = Resource_Manager()
+        ## EDIT THIS PATH WHEN MOVING TO A NEW COMPUTER
+        self.path = "/mnt/c/Users/Kyle\ Hollars/Desktop/labels.pdf"
 
     def add_item(self, id: int):
         item: dict = self.rm.get_item(id)
@@ -24,5 +26,5 @@ class LabelGenerator:
 
     # generates pdf for all labels in records
     def write_labels(self):
-        self.label_writer.write_labels(self.records, target="qrcode_and_label.pdf")
+        self.label_writer.write_labels(self.records, target=self.path)
         self.records = []
