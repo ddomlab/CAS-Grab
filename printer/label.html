@@ -1,10 +1,9 @@
 <img src="{{ label_tools.datamatrix(qr_json, cellsize=4,with_border=True) }}"/>
 <span class='label'>
-    <div class="name">{{ name }}</div> <br/>
+    {{ name }}<br/>
     id: {{ id_num }} <br/>
     <div class="extra_info">
-    Room: {{ room }} <br/>
-    Location: {{ loc }} <br/>
-    Added to ELN: {{ date}}
+    Received Date:<br/><br/>
+    Notes: 
     </div>
 </span>

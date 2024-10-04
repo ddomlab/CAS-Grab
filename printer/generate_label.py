@@ -13,28 +13,11 @@ class LabelGenerator:
 
     def add_item(self, id: int):
         item: dict = self.rm.get_item(id)
-        metadata: dict = json.loads(item["metadata"])
-
-        room_checked: str = "--"
-        loc_checked: str = "--"
-
-        ## handles errors if location or room are left blank
-        try:
-            room_checked = metadata["extra_fields"]["Room"]["value"]
-        except KeyError:
-            pass
-        try:
-            loc_checked = metadata["extra_fields"]["Location"]["value"]
-        except KeyError:
-            pass
         ## adds records to list to be printed
         self.records.append(
             dict(
                 id_num=id,
                 name=item["title"],
-                room=room_checked,
-                loc=loc_checked,
-                date=item["_date"],
                 qr_json=json.dumps({"id": id}),
             )
         )
