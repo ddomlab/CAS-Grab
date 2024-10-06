@@ -1,5 +1,7 @@
 # API Key
 api_key
+#tmp folder contents
+tmp/*
 # Mac
 .DS_Store
 
