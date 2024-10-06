@@ -2,7 +2,8 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 
 
-def generate_image(smiles):
+def generate_image(smiles) -> str:
     mol = Chem.MolFromSmiles(smiles)
-    img = Draw.MolToImage(mol)
-    return img
+    filename = "RDKitImage.png"
+    Draw.MolToFile(mol, "tmp/" + filename)
+    return filename
