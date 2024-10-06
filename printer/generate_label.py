@@ -10,8 +10,7 @@ class LabelGenerator:
         )  # TODO: platform agnostic paths
         self.records = []
         self.rm = Resource_Manager()
-        ## EDIT THIS PATH WHEN MOVING TO A NEW COMPUTER
-        self.path = "/mnt/c/Users/Kyle Hollars/Desktop/labels.pdf"
+        self.path = self.rm.printer_path
 
     def add_item(self, id: int):
         item: dict = self.rm.get_item(id)

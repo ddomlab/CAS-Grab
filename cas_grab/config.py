@@ -8,6 +8,7 @@ import urllib3
 # new api keys can be generated at https://eln.ddomlab.org/ucp.php?tab=4
 API_KEY_PATH = "api_key"
 URL = "https://eln.ddomlab.org/api/v2"
+PRINTER_PATH = "/home/kyle/Desktop/labels.pdf"
 ##################################################
 
 # allows the connection
@@ -36,6 +37,10 @@ def load_items_api():
 
 def load_experiments_api():
     return elabapi_python.ExperimentsApi(api_client)
+
+
+def load_uploads_api():
+    return elabapi_python.UploadsApi(api_client)
 
 
 def load_api():

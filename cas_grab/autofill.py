@@ -20,13 +20,14 @@ def get_compound(CAS):
 
 
 def fill_in(id):
-    body = rm.get_item(id)
+    body: dict = rm.get_item(id)
     compound = get_compound(body["title"])
     CAS = body["title"]
     metadata = json.loads(body["metadata"])
     metadata["extra_fields"]["SMILES"]["value"] = compound.isomeric_smiles
     metadata["extra_fields"]["Full name"]["value"] = compound.iupac_name
     metadata["extra_fields"]["CAS"]["value"] = CAS
+    metadata["extra_fields"]["Molecular weight"]["value"] = compound.molecular_weight
 
     # TODO add hazards : this is proving to be more difficult than expected, i'll deal with this later
     # hazards are not readily accessible through pubchempy api, so i'll have to find another way to get them
