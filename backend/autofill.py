@@ -1,6 +1,6 @@
 import pubchempy as pcp
-import cas_grab.image_generator as ig
-from cas_grab.resourcemanage import Resource_Manager
+import backend.image_generator as ig
+from backend.resourcemanage import Resource_Manager
 import json
 
 rm = Resource_Manager()

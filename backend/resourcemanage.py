@@ -5,7 +5,7 @@
 # this contains mostly code written by Connor found in Python_Scripts.zip in the Onedrive.
 # i am mostly writing wrappers and making the code a little more abstract and generally usable
 
-import cas_grab.config as config
+import backend.config as config
 import requests
 
 
