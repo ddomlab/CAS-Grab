@@ -4,6 +4,6 @@ from rdkit.Chem import Draw
 
 def generate_image(smiles) -> str:
     mol = Chem.MolFromSmiles(smiles)
-    filename = "RDKitImage.png"
-    Draw.MolToFile(mol, "tmp/" + filename)
+    filename = "tmp/RDKitImage.png"
+    Draw.MolToFile(mol, filename)
     return filename

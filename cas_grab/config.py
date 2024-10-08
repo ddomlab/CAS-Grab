@@ -8,7 +8,7 @@ import urllib3
 # new api keys can be generated at https://eln.ddomlab.org/ucp.php?tab=4
 API_KEY_PATH = "api_key"
 URL = "https://eln.ddomlab.org/api/v2"
-PRINTER_PATH = "/home/kyle/Desktop/labels.pdf"
+PRINTER_PATH = "/home/kyle/Desktop/label.pdf"
 ##################################################
 
 # allows the connection

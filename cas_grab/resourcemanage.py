@@ -55,18 +55,25 @@ class Resource_Manager:
         # send the request
         requests.post(url, headers=header)
 
-    def get_items(self) -> list:
-        return self.itemsapi.read_items()
+    def get_items(
+        self, size=None
+    ) -> list:  # returns the most recent 15 if a size is not specified
+        return self.itemsapi.read_items(limit=size)
 
     def get_experiments(self) -> list:
         return self.expapi.read_experiments()
 
     def upload_file(
-        self, id, path, comment="", resource_type="item"
+        self, id, path, comment="", resource_type="items"
     ):  # resource_type can be 'item' or 'experiment', wraps the upload api
         self.uploadsapi.post_upload(resource_type, id, file=path, comment=comment)
 
-    def get_uploaded_files(self, id, resource_type="item"):
+    def delete_upload(
+        self, id, upload_id, resource_type="items"
+    ):  # resource_type can be 'item' or 'experiment', wraps the upload api
+        self.uploadsapi.delete_upload(resource_type, id, upload_id)
+
+    def get_uploaded_files(self, id, resource_type="items"):
         return self.uploadsapi.read_uploads(
             resource_type, id
         )  # returns a list of file objects that can be written to a file
