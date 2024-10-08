@@ -1,4 +1,4 @@
-from cas_grab.resourcemanage import Resource_Manager
+from backend.resourcemanage import Resource_Manager
 import printer.generate_label
 
 rm = Resource_Manager()
