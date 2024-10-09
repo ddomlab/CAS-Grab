@@ -1,6 +1,8 @@
-# CAS-Grab Inventory Manager
+# CAS-Grab Inventory Managing Tools
 
-A tool to manage and automate inventory processes with the DDOMLab's ELN. Contains a variety of tools.
-
-## Notes about Installation
-- Contains multiple packages, 
+A set of tools written in Python to manage inventory and experiments at eln.ddomlab.org.
+## Structure
+- Contains multiple packages: `Ddomlab-ELN-Automation-Common`, `Ddomlab-ELN-Automation-Backend` and `Ddomlab-ELN-Automation-Frontend`
+- The frontend is an application that allows the user to interact with the ELN through a GUI. This extends some of the functions of the web GUI to work with a QR code scanner, although many advanced functions must be done through the web application.
+- The backend is an set of scripts used to generate labels, RDKit images, and to pull information from PubChem and attach it to items.
+- The common package contains functions used by both the frontend and backend.
