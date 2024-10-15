@@ -5,6 +5,8 @@ https://github.com/ddomlab/eln_packages_frontend
 https://github.com/ddomlab/eln_packages_backend
 https://github.com/ddomlab/eln_packages_common
 
+This repository should be archived, but I do not have access to the settings required to archive the repository.
+
 # CAS-Grab Inventory Managing Tools
 
 A set of tools written in Python to manage inventory and experiments at eln.ddomlab.org.
